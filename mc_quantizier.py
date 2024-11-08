@@ -116,7 +116,7 @@ class MedianCutQuantizier:
             end_y = start_y + row_height
             palette[start_y:end_y, :] = color  # Set the color for this row
         output_path = os.path.join(self.output_folder, "qt_palette" + str(self.colors) + ".jpg")
-        palette = np.pad(palette, pad_width=((200, 200), (800, 800), (0, 0)), mode='constant', constant_values=255)
+        palette = np.pad(palette, pad_width=((200, 200), (400, 400), (0, 0)), mode='constant', constant_values=255)
         palette = cv2.cvtColor(palette, cv2.COLOR_RGB2BGR)
         cv2.imwrite(output_path, palette)
         
